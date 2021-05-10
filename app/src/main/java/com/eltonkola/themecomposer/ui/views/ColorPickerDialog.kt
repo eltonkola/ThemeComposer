@@ -79,18 +79,6 @@ fun ColorPicerDialog(
         ) {
 
             Column() {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(MaterialTheme.colors.primary)
-                        .padding(12.dp)
-                ) {
-                    Text(
-                        text = "Game won",
-                        color = MaterialTheme.colors.onPrimary,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
 
                 var primary by remember { mutableStateOf(color) }
                 TopAppBar(title = { Text("Color Picker") }, backgroundColor = primary)

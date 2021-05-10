@@ -2,8 +2,10 @@ package com.eltonkola.themecomposer.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
@@ -66,8 +68,9 @@ fun RowCard() {
             .padding(12.dp),
         elevation = 8.dp,
     ) {
-        Column() {
+        Row() {
             CoilImage(
+                modifier = Modifier.size(110.dp),
                 data = "https://picsum.photos/300/300",
                 contentDescription = "My content description",
                 loading = {
@@ -79,12 +82,25 @@ fun RowCard() {
 //                  Image(asset = imageResource(R.drawable.ic_error))
 //              }
             )
+
+            Column(
+                modifier = Modifier.padding(8.dp).weight(1f)
+            ) {
+                Text(
+                    modifier = Modifier.padding(8.dp),
+                    text = "This is a Card",
+                    style = MaterialTheme.typography.h5,
+                )
+                Text(
+                    modifier = Modifier.padding(8.dp),
+                    text = "This is a Card",
+                    style = MaterialTheme.typography.h6,
+                )
+            }
+
+
         }
 
-        Text(
-            modifier = Modifier.padding(8.dp),
-            text = "This is a Card"
-        )
     }
 
 
